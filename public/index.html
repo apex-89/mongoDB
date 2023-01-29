@@ -9,8 +9,13 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <h1>Home</h1>
+    <nav id="navbar">
+        <h1>Home</h1>
+        <h1 id="display-page-button">Display Food</h1>
+        <h1 id="delete">Delete Bad Data</h1>
+    </nav>
     <div id="container">
+        <p id="upload-status"></p>
         <div class="input-container">
             <label for="name-input">Name</label>
             <input type="text" id="name-input"/>
@@ -30,6 +35,7 @@
             </select>
         </div>
         <button id="submit-button">Create Fruit</button>
+        <button id="submit-veg">Create Vegetables</button>
     </div>
     
 

@@ -1,0 +1,25 @@
+#display-case {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h1 {
+    text-align: center;
+}
+
+.hover {
+    width: 10em;
+    height: 5ex;
+    background-color: gold;
+    border: 2px solid firebrick;
+    border-radius: 10px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    text-align: center;
+}
+
+.hover:hover {
+    background-color: bisque;
+}
