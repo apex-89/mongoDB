@@ -26,7 +26,7 @@ const getData = async () => {
             // idk wth im doing
             pTag.addEventListener('click', () => {
                 console.log(object._id)
-                window.location.href = `../single_food?idInQuery=${object._id}`;          
+                window.location.href = `../single_food?idInQuery=${object._id}&typeInQuery=${object.type}`;          
             })
             // pTag.addEventListener('click',async  (event) => {
             //     console.log(event.target);
@@ -78,7 +78,7 @@ const getVegData = async () => {
             pTag.classList = 'hover'
             pTag.addEventListener('click', () => {
                 console.log(object._id)
-                window.location.href = `../single_food?idInQuery=${object._id}`;          
+                window.location.href = `../single_food?idInQuery=${object._id}&typeInQuery=${object.type}`;          
             })
             containerVegElement.appendChild(pTag);
         })

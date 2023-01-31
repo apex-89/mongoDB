@@ -6,7 +6,8 @@ const vegetableSchema = new mongoose.Schema({
     name: String,
     color: String,
     age: Number,
-    readyToEat: Boolean
+    readyToEat: Boolean,
+    type: String
 })
 
 const MyVegetable = mongoose.model('MyVegatable', vegetableSchema)

@@ -16,7 +16,7 @@ submitButton.addEventListener('click', async () => {
     let ageNumber = +document.getElementById('age-input').value;
     // using ternary operator here - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
     let readyBool = document.getElementById('ready-bool').value === "true" ? true : false;
-
+    let typeString = "fruit"
     // packing all our data in an object
     // same as 
     // nameString: nameString
@@ -24,7 +24,8 @@ submitButton.addEventListener('click', async () => {
         nameString,
         colorString,
         ageNumber,
-        readyBool
+        readyBool,
+        typeString
     }
 
 
@@ -64,13 +65,14 @@ submitVegButton.addEventListener('click', async () => {
     let colorString = document.getElementById('color-input').value;
     let ageNumber = +document.getElementById('age-input').value;
     let readyBool = document.getElementById('ready-bool').value === "true" ? true : false;
-
+    let typeString = "veggie"
 
     const vegetable = {
         nameString,
         colorString,
         ageNumber,
-        readyBool
+        readyBool,
+        typeString
     }
 
 

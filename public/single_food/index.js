@@ -6,6 +6,7 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
   });
   // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
   let id = params.idInQuery; 
+  let type = params.typeInQuery;
   console.log(id);
 
   let container = document.getElementById("produce-container")
@@ -17,6 +18,7 @@ const getSingleFruit = async () => {
     let finalData = await response.json();
 
     console.log(finalData);
+    console.log({finalData})
     // use this finalData to make some tags, etc.
     let imgTag = document.createElement("img")
     let pTag = document.createElement("p");
@@ -25,15 +27,19 @@ const getSingleFruit = async () => {
     imgTag.style = "width:250px;height:250px";
     imgContain.appendChild(imgTag);     
     container.appendChild(pTag);
+    if (finalData.readyToEat !== true) {
+      pTag.style.color = "red"
+    } else {
+      pTag.style.color = "green"
+    }
 }
 
 
 const getSingleVeggie = async () => {
   let response = await fetch(`http://localhost:5000/veggie/${id}`);
-
+  console.log(response)
   let finalData = await response.json();
-
-  console.log(finalData);
+  console.log({finalData})
   // use this finalData to make some tags, etc.
   // if not ready to eat- red text
   let imgTag = document.createElement("img")
@@ -43,12 +49,19 @@ const getSingleVeggie = async () => {
   imgTag.style = "width:250px;height:250px";
   imgContain.appendChild(imgTag);     
   container.appendChild(pTag);
+  if (finalData.readyToEat !== true) {
+    pTag.style.color = "red"
+  } else {
+    pTag.style.color = "green"
+  }
   // let veggName = document.getElementById('produce')
   // veggName.textContent = [finalData.name, finalData.color, finalData.age]
 }
-
+if (type === "fruit") {
 getSingleFruit()
-
-getSingleVeggie()
+}
+if (type === "veggie") {
+  getSingleVeggie()
+}
  
 

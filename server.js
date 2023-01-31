@@ -45,14 +45,15 @@ mongoose.connection.once('open', ()=> {
 app.post('/create_fruit', async (req, res) =>{
     // destructuring - see more here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
     // renaming variable while destrucutring: https://wesbos.com/destructuring-renaming
-    const {nameString: name, colorString: color, ageNumber: age, readyBool: readyToEat} = req.body;
+    const {nameString: name, colorString: color, ageNumber: age, readyBool: readyToEat, typeString: type} = req.body;
 
     // Model methods usually give us a promise, so we can wait for the response
     let returnedValue = await MyFruit.create({
         name,
         color,
         age,
-        readyToEat
+        readyToEat,
+        type
     });
 
 
@@ -65,13 +66,14 @@ app.post('/create_fruit', async (req, res) =>{
 })
 
 app.post('/create_veggie', async (req,res) => {
-    const {nameString: name, colorString: color, ageNumber: age, readyBool: readyToEat} = req.body;
+    const {nameString: name, colorString: color, ageNumber: age, readyBool: readyToEat, typeString: type} = req.body;
     
     let returnedValue = await MyVegetable.create({
         name,
         color,
         age,
-        readyToEat
+        readyToEat,
+        type
     });
 
     console.log(returnedValue);

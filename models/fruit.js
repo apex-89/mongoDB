@@ -6,7 +6,8 @@ const fruitSchema = new mongoose.Schema({
     name: String,
     color: String,
     age: Number,
-    readyToEat: Boolean
+    readyToEat: Boolean,
+    type: String
 })
 
 const MyFruit = mongoose.model('MyFruit', fruitSchema)
